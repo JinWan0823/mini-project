@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes spin {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s ease-in-out infinite;
+}

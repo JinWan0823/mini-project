@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import CommentForm from "./components/CommentForm";
-import CommentLi from "./components/CommnetLi";
+import CommentList from "./components/CommentList";
 import Header from "./components/Header";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 export default function Home() {
   return (
@@ -8,19 +10,9 @@ export default function Home() {
       <main className="max-w-[1100px] w-[95%] py-2 h-screen min-h-[400px] mx-auto">
         <div className="flex flex-col w-full relative h-full overflow-hidden border-1 bg-[#333] rounded-[12px] overflow-hidden">
           <Header />
-          <ul className="flex-1 overflow-y-auto px-2">
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-            <CommentLi />
-          </ul>
+          <Suspense fallback={<LoadingSpinner />}>
+            <CommentList />
+          </Suspense>
           <CommentForm />
         </div>
       </main>
