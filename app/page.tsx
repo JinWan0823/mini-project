@@ -10,6 +10,12 @@ export default function Home() {
           <Header />
           <ul className="flex-1 overflow-y-auto px-2">
             <CommentLi />
+            <CommentLi />
+            <CommentLi />
+            <CommentLi />
+            <CommentLi />
+            <CommentLi />
+            <CommentLi />
           </ul>
         </div>
         <CommentForm />
