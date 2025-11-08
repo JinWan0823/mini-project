@@ -1,6 +1,7 @@
 "use client";
 import { useActionState } from "react";
 import { addComment } from "../actions/addComment";
+import SubmitBtn from "./SubmitBtn";
 
 export default function CommentForm() {
   const [data, submitAction, isPending] = useActionState(addComment, null);
@@ -28,12 +29,7 @@ export default function CommentForm() {
           placeholder="내용을 입력해주세요."
           required
         />
-        <button
-          type="submit"
-          className="font-bold w-[120px] h-[42px] rounded text-white p-1 bg-blue-400 cursor-pointer"
-        >
-          {isPending ? "작성 중..." : "작성하기"}
-        </button>
+        <SubmitBtn />
       </div>
     </form>
   );
