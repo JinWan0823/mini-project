@@ -10,6 +10,7 @@ export default function Home() {
       <main className="max-w-[1100px] w-[95%] py-2 h-screen min-h-[400px] mx-auto">
         <div className="flex flex-col w-full relative h-full overflow-hidden border-1 bg-[#333] rounded-[12px] overflow-hidden">
           <Header />
+
           <Suspense fallback={<LoadingSpinner />}>
             <CommentList />
           </Suspense>

@@ -1,6 +1,7 @@
 import { use } from "react";
 import CommentLi from "./CommnetLi";
 import { CommentTypes } from "../types/commentTypes";
+import ScrollUp from "./ScrollUp";
 
 async function getComments() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/comments`, {
@@ -13,10 +14,13 @@ async function getComments() {
 export default function CommentList() {
   const comments = use(getComments());
   return (
-    <ul className="flex-1 overflow-y-auto px-2">
-      {comments.map((comment: CommentTypes) => (
-        <CommentLi key={comment.id} comment={comment} />
-      ))}
-    </ul>
+    <>
+      <ul className="flex-1 overflow-y-auto px-2">
+        <ScrollUp />
+        {comments.map((comment: CommentTypes) => (
+          <CommentLi key={comment.id} comment={comment} />
+        ))}
+      </ul>
+    </>
   );
 }
