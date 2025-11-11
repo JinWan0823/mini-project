@@ -42,3 +42,11 @@ app/
 | `feature/use-formstatus` | `useFormStatus()`로 submit 상태 표시 |
 | `feature/use-optimistic` | 낙관적 업데이트 (좋아요 버튼) |
 
+
+### 환경 변수 설정
+
+프로젝트 루트에 .env.local 파일 생성:
+```
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
